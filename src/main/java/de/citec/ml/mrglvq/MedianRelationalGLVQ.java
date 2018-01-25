@@ -1,7 +1,7 @@
 /* 
  * Median Relational Generalized Learning Vector Quantization
  * 
- * Copyright (C) 2017
+ * Copyright (C) 2017-2018
  * Benjamin Paaßen
  * AG Machine Learning
  * Centre of Excellence Cognitive Interaction Technology (CITEC)
@@ -87,7 +87,7 @@ public final class MedianRelationalGLVQ {
 	 * we expect:
 	 * </p>
 	 *
-	 * @param D a m x m matrix of pairwise distances. Note that we do not make only very weak
+	 * @param D a m x m matrix of pairwise distances. Note that we make only very weak
 	 * assumptions regarding the internal structure of this matrix. Mostly, we expect the diagonal
 	 * to be the minimum of each row. Other than that, the matrix may be arbitrary. In particular,
 	 * the distances may be asymmetric, negative, and not conform to the triangular inequality.
@@ -153,7 +153,7 @@ public final class MedianRelationalGLVQ {
 	 * we expect:
 	 * </p>
 	 *
-	 * @param D a m x m matrix of pairwise distances. Note that we do not make only very weak
+	 * @param D a m x m matrix of pairwise distances. Note that we make only very weak
 	 * assumptions regarding the internal structure of this matrix. Mostly, we expect the diagonal
 	 * to be the minimum of each row. Other than that, the matrix may be arbitrary. In particular,
 	 * the distances may be asymmetric, negative, and not conform to the triangular inequality.

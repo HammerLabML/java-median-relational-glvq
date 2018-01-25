@@ -2,7 +2,7 @@
 <!--
 Median Relational Generalized Learning Vector Quantization
 
-Copyright (C) 2017
+Copyright (C) 2017-2018
 Benjamin Paaßen
 AG Machine Learning
 Centre of Excellence Cognitive Interaction Technology (CITEC)
@@ -94,8 +94,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10.3</version>
-				<configuration><!-- TODO: Update link -->
-					<bottom>Copyright (C) 2017 Benjamin Paaßen, AG Machine Learning, Centre of Excellence Cognitive Interaction Technology (CITEC), University of Bielefeld, licensed under the GPL v. 3: http://openresearch.cit-ec.de/projects/tcs . This documentation is licensed under the conditions of CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/</bottom>
+				<configuration>
+					<bottom>Copyright (C) 2018 Benjamin Paaßen, AG Machine Learning, Centre of Excellence Cognitive Interaction Technology (CITEC), University of Bielefeld, licensed under the GPL v. 3: http://openresearch.cit-ec.de/projects/tcs . This documentation is licensed under the conditions of CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/</bottom>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -3,7 +3,7 @@ ${licenseFirst}
 </#if>
 ${licensePrefix}Median Relational Generalized Learning Vector Quantization
 ${licensePrefix}
-${licensePrefix}Copyright (C) 2017
+${licensePrefix}Copyright (C) 2017-2018
 ${licensePrefix}Benjamin Paaßen
 ${licensePrefix}AG Machine Learning
 ${licensePrefix}Centre of Excellence Cognitive Interaction Technology (CITEC)
