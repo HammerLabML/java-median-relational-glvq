@@ -1,9 +1,9 @@
 # Median Relational Generalized Learning Vector Quantization
 
-Copyright (C) 2018
-Benjamin Paaßen
-AG Machine Learning
-Centre of Excellence Cognitive Interaction Technology (CITEC)
+Copyright (C) 2018  
+Benjamin Paaßen  
+AG Machine Learning  
+Centre of Excellence Cognitive Interaction Technology (CITEC)  
 University of Bielefeld
 
 This program is free software: you can redistribute it and/or modify
