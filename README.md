@@ -156,9 +156,9 @@ A copy of this license is contained in the `gpl-3.0.md` file alongside this READ
 * Kohonen, T. (1995). Learning Vector Quantization. In: Self-Organizing Maps, 175-189. doi: [10.1007/978-3-642-97610-0_6][1]
 * Sato, A., and Yamada, K. (1995). _Generalized Learning Vector Quantization_. In: Tesauro, G., Touretzky, D., and Leen, T. (eds.) Proceedings of the 7th Conference on Advances in Neural Information Processing (NIPS 1995), 423-429. [Link][2]
 * Nebel, D., Hammer, B., Frohberg, K., and Villmann, T. (2015). _Median variants of learning vector quantization for learning of dissimilarity data_. Neurocomputing, 169, pp. 295-305. doi: [10.1016/j.neucom.2014.12.096][3]
-* Paaßen, B. (2018). _Median Relational Generalized Learning Vector Quantization_. Bielefeld University. doi: [TODO][4]
+* Paaßen, B. (2018). _Median Relational Generalized Learning Vector Quantization_. Bielefeld University. doi: [10.4119/unibi/2916990][4]
 
 [1]: https://doi.org/10.1007/978-3-642-97610-0_6 "Kohonen, T. (1995). Learning Vector Quantization. In: Self-Organizing Maps, 175-189"
 [2]: https://papers.nips.cc/paper/1113-generalized-learning-vector-quantization "Sato, A., and Yamada, K. (1995). Generalized Learning Vector Quantization. In: Tesauro, G., Touretzky, D., and Leen, T. (eds.) Proceedings of the 7th Conference on Advances in Neural Information Processing (NIPS 1995), 423-429."
 [3]: https://doi.org/10.1016/j.neucom.2014.12.096 "Nebel, D., Hammer, B., Frohberg, K., and Villmann, T. (2015). Median variants of learning vector quantization for learning of dissimilarity data. Neurocomputing, 169, pp. 295-305."
-[4]: TODO "Paaßen, B. (2018). Median Relational Generalized Learning Vector Quantization. Bielefeld University."
+[4]: https://doi.org/10.4119/unibi/2916990 "Paaßen, B. (2018). Median Relational Generalized Learning Vector Quantization. Bielefeld University."
