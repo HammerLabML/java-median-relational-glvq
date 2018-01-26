@@ -26,7 +26,7 @@ _Learning vector quantization_ (LVQ) is a classification algorithm which represe
 of _prototypes_ and classifies data by assigning each data point to the class of the closest
 prototype ([Kohonen, 1995][1]). Median versions of LVQ use data points as prototypes, that is: Each
 prototype corresponds exactly to a data point from the training data. This particular
-implementataion of median LVQ is _relational_, which means that it is solely based on _distances_.
+implementation of median LVQ is _relational_, which means that it is solely based on _distances_.
 
 The input to this algorithm is a m x m distance matrix D, a number of prototypes per class K and a
 m x 1 vector of training data labels Y, and the output is an array of prototypes W with K prototypes
@@ -40,7 +40,7 @@ distances need to be computed to classify new data points.
 2. The prototypes used for classification are well-interpretable because they directly correspond
 to data points and thus give the option to inspect and explain the model, as well as making sense
 of the data.
-3. Even atypical distance measures can be treated, e.g. distances which are assymmetric and do not
+3. Even atypical distance measures can be treated, e.g. distances which are asymmetric and do not
 conform to the triangular inequality.
 
 ## Installation
@@ -147,7 +147,7 @@ which already provides a good starting point where prototypes are representative
 ## License
 
 This documentation is licensed under the terms of the [creative commons attribution-shareAlike 4.0 international (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license. The code
-contained alongside this documentation is licensed unter the
+contained alongside this documentation is licensed under the
 [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
 A copy of this license is contained in the `gpl-3.0.md` file alongside this README.
 
