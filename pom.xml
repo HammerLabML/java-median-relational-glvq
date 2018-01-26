@@ -40,6 +40,39 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		another data point in order to improve the cost function. If the cost function can not be
 		improved anymore for any of the data points, the algorithm terminates.
 	</description>
+	<url>https://gitlab.ub.uni-bielefeld.de/bpaassen/median_relational_glvq</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<netbeans.hint.license>gpl_license_header_mrglvq</netbeans.hint.license>
+	</properties>
+
+	<licenses>
+		<license>
+			<name>The GNU General Public License, Version 3</name>
+			<url>https://gnu.org/licenses/gpl.html</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Benjamin Paaßen</name>
+			<email>bpaassen@techfak.uni-bielefeld.de</email>
+			<organization>Centre of Excellence - Cognitive Interaction Technology (CITEC),
+				Faculty of Technology,
+				Bielefeld University</organization>
+			<organizationUrl>https://cit-ec.de/tcs</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://gitlab.ub.uni-bielefeld.de/bpaassen/median_relational_glvq.git</connection>
+		<developerConnection>scm:git:https://gitlab.ub.uni-bielefeld.de/bpaassen/median_relational_glvq.git</developerConnection>
+		<url>https://gitlab.ub.uni-bielefeld.de/bpaassen/median_relational_glvq</url>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>de.cit-ec.ml</groupId>
@@ -54,28 +87,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-	</properties>
-
-	<licenses>
-		<license>
-			<name>The GNU General Public License, Version 3</name>
-			<url>https://gnu.org/licenses/gpl.html</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<name>Benjamin Paaßen</name>
-			<email>bpaassen@techfak.uni-bielefeld.de</email>
-			<organization>Centre of Excellence - Cognitive Interaction Technology (CITEC),
-				Faculty of Technology,
-				Bielefeld University</organization>
-			<organizationUrl>https://cit-ec.de/tcs</organizationUrl>
-		</developer>
-	</developers>
 
 	<!-- Default build properties -->
 	<build>
@@ -95,7 +106,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10.3</version>
 				<configuration>
-					<bottom>Copyright (C) 2018 Benjamin Paaßen, AG Machine Learning, Centre of Excellence Cognitive Interaction Technology (CITEC), University of Bielefeld, licensed under the GPL v. 3: http://openresearch.cit-ec.de/projects/tcs . This documentation is licensed under the conditions of CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/</bottom>
+					<bottom>Copyright (C) 2017-2018 Benjamin Paaßen, AG Machine Learning, Centre of Excellence Cognitive Interaction Technology (CITEC), University of Bielefeld, licensed under the GPL v. 3: http://openresearch.cit-ec.de/projects/tcs . This documentation is licensed under the conditions of CC-BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/</bottom>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -123,6 +134,74 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 							</descriptorRefs>
 							<appendAssemblyId>false</appendAssemblyId>
 						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This is a special profile for deploying a version, which generates
+		everything the mvn central repository requires. For all non-deploying builds
+		this is irrelevant. -->
+		<profile> 
+			<id>release</id>
+			<build>
+				<plugins>
+					<!-- Nexus Staging Plugin for Deploying to central repository -->
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.7</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+					<!-- Maven Source Plugin for generating a jar containing all sources.
+					This is required by the maven central repository. -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Maven Javadoc Plugin for generating a jar containing all javadoc.
+					This is required by the maven central repository. -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Maven PGP Plugin for generating a pgp signature of the project.
+					This is required by the maven central repository. -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
