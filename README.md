@@ -21,7 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Introduction
 
-This is a Java 7, fully MATLAB (R)-compatible implementation of _median relational generalized learning vector quantization_ (MRGLVQ).
+This is a Java 7, fully MATLAB (R)-compatible implementation of
+_median relational generalized learning vector quantization_ (MRGLVQ) as proposed by
+[Nebel, Hammer, Frohberg, and Villmann (2015)][3].
 _Learning vector quantization_ (LVQ) is a classification algorithm which represents classes in terms
 of _prototypes_ and classifies data by assigning each data point to the class of the closest
 prototype ([Kohonen, 1995][1]). Median versions of LVQ use data points as prototypes, that is: Each
