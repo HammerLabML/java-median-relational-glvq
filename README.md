@@ -122,10 +122,10 @@ learning vector quantization cost function as proposed by [Sato and Yamada (1995
 where d<sub>i</sub><sup>+</sup> is the distance of the i-th data point to the closest prototype
 with the same label, d<sub>i</sub><sup>-</sup> is the distance of the i-th data point to the
 closest prototype with a different label, and &Phi; is a non-linear function, typically a sigmoid.
-Note that this error function measures exactly the classification error if &Phi; is mapped to 0
-for inputs smaller than 0 and to 1 for inputs bigger than 0, because the input to &Phi; is bigger
-than zero if and only if the data point is further away from a any correct prototype than from
-the closest wrong prototype, i.e. if and only if the data point is misclassified.
+Note that this error function measures exactly the classification error if &Phi; maps any input
+smaller than 0 to 0 and any input larger than 0 to 1, that is, if the data point is further away
+from the closest correct prototype compared to the closest wrong prototype, we count this as an
+error, and otherwise we do not.
 
 ### Median Generalized Learning Vector Quantization
 
@@ -140,7 +140,8 @@ scheme which re-writes the GLVQ error function to a log-likelihood function as f
 	(d<sub>i</sub><sup>+</sup> + d<sub>i</sub><sup>-</sup>)
 )</center>
 
-Note that maximizing this likelihood is equivalent to minimizing E if &Phi; is the log function.
+Note that maximizing this likelihood is equivalent to minimizing E if &Phi; is the log function
+and the constant in front is large enough (in this case, 4).
 The expectation step consists essentially of re-computing the closest prototypes for each data
 point as well as the respective distances, while the maximization step consists of replacing one
 prototype with a different data point from the same Voronoi cell such that L is improved.
@@ -149,8 +150,9 @@ which already provides a good starting point where prototypes are representative
 
 ## License
 
-This documentation is licensed under the terms of the [creative commons attribution-shareAlike 4.0 international (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license. The code
-contained alongside this documentation is licensed under the
+This documentation is licensed under the terms of the
+[creative commons attribution-shareAlike 4.0 international (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+license. The code contained alongside this documentation is licensed under the
 [GNU General Public License Version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
 A copy of this license is contained in the `gpl-3.0.md` file alongside this README.
 
