@@ -22,20 +22,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ## Introduction
 
 This is a Java 7, fully MATLAB (R)-compatible implementation of
-_median relational generalized learning vector quantization_ (MRGLVQ) as proposed by
+_median generalized learning vector quantization_ (MGLVQ) for dissimilarity data as proposed by
 [Nebel, Hammer, Frohberg, and Villmann (2015)][3].
 _Learning vector quantization_ (LVQ) is a classification algorithm which represents classes in terms
 of _prototypes_ and classifies data by assigning each data point to the class of the closest
 prototype ([Kohonen, 1995][1]). Median versions of LVQ use data points as prototypes, that is: Each
 prototype corresponds exactly to a data point from the training data. This particular
-implementation of median LVQ is _relational_, which means that it is solely based on _distances_.
+implementation of median GLVQ takes a matrix of pairwise distances or dissimilarities as input,
+which is why we call it _relational_.
 
 The input to this algorithm is a m x m distance matrix D, a number of prototypes per class K and a
 m x 1 vector of training data labels Y, and the output is an array of prototypes W with K prototypes
 per class, given as data point indices. The training is performed according to an expectation
 maximization scheme suggested by ([Nebel, Hammer, Frohberg, and Villmann, 2015][3]).
 
-The main advantages of median relational GLVQ compared to other relational classifiers are
+The main advantages of median relational GLVQ compared to other distance-based classifiers are
 
 1. Because the number of prototypes is small compared to the number of data points, only very few
 distances need to be computed to classify new data points.
@@ -97,7 +98,7 @@ classifies new data points given the distances D2 from the new data points to th
 
 ## Background
 
-This is a short introduction regarding the background of median relational generalized learning
+This is a short introduction regarding the background of median generalized learning
 vector quantization. For a more comprehensive explanation, I recommend to consult
 [Nebel et al. (2015)][3].
 
@@ -126,7 +127,7 @@ for inputs smaller than 0 and to 1 for inputs bigger than 0, because the input t
 than zero if and only if the data point is further away from a any correct prototype than from
 the closest wrong prototype, i.e. if and only if the data point is misclassified.
 
-### Median Relational Generalized Learning Vector Quantization
+### Median Generalized Learning Vector Quantization
 
 Median LVQ imposes the additional restriction that prototypes may not be any points in the data
 space but are restricted to be one of the training data points. This implies that we can not
